@@ -4,12 +4,11 @@ namespace CondoManager.Repositories
 {
     public class ApartmentRepository : BaseRepository<Apartment>, IApartamentRepository
     {
-        private readonly DataContext _context;
         public ApartmentRepository(DataContext dataContext) : base(dataContext) {}
 
         public override async Task Update(Apartment condo)
         {
-            var ApartmentToUpdate = await _context.Apartments.FindAsync(condo.Id);
+            var ApartmentToUpdate = await dbSet.FindAsync(condo.Id);
             if (ApartmentToUpdate == null)
             {
                 throw new NullReferenceException();
