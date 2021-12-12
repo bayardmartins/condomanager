@@ -5,8 +5,8 @@ namespace CondoManager.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : Entity
     {
-        private readonly DataContext _context;
-        private DbSet<T> dbSet;
+        internal readonly DataContext _context;
+        internal DbSet<T> dbSet;
         public BaseRepository(DataContext context)
         {
             _context = context;
