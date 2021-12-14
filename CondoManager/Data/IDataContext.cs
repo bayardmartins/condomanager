@@ -8,5 +8,6 @@ namespace CondoManager.Data
         DbSet<CondoBlock> CondoBlocks { get; set; }
         DbSet<Apartment> Apartments { get; set; }
         DbSet<Resident> Residents { get; set; }
+        DbSet<User> Users { get; set; }        
     }
 }

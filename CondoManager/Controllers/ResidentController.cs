@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using CondoManager.Models;
 
 namespace CondoManager.Controllers
 {
     [ApiController]
     [Route("v1/api/[controller]")]
+    [Authorize]
     public class ResidentController : ControllerBase
     {
         //GET: v1/api/Resident

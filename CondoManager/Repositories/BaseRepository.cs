@@ -22,7 +22,7 @@ namespace CondoManager.Repositories
         }
         public async Task Add(T item)
         {
-            dbSet.Add(item);
+            await dbSet.AddAsync(item);
         }
         public async Task Delete(int id)
         {
