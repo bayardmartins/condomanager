@@ -14,7 +14,7 @@ namespace CondoManager.Repositories
             var user = await dbSet.FindAsync(userName);
             if (user == null)
             {
-                throw new NullReferenceException();
+                return null;
             }
             return user;
         }
