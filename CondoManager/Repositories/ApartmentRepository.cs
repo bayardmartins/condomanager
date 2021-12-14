@@ -2,9 +2,14 @@ using CondoManager.Models;
 
 namespace CondoManager.Repositories
 {
-    public class ApartmentRepository : BaseRepository<Apartment>, IApartamentRepository
+    public class ApartmentRepository : BaseRepository<Apartment>, IApartmentRepository
     {
         public ApartmentRepository(DataContext dataContext) : base(dataContext) {}
+
+        public override async Task Add(Apartment apartment)
+        {
+            await base.Add(apartment);
+        }
 
         public override async Task Update(Apartment condo)
         {
@@ -19,14 +24,25 @@ namespace CondoManager.Repositories
             ApartmentToUpdate.CondoBlockId = condo.CondoBlockId;
         }
 
-        public async Task RemoveResident(int Id)
+        public async Task RemoveResident(int idApartment, Resident resident)
         {
-            throw new NotImplementedException();
+            Apartment apartment = await dbSet.FindAsync(idApartment);
+            if(apartment == null)
+            {
+                throw new NullReferenceException();
+            }
+            apartment.ResidentList.Remove(resident);
         }
 
-        public async Task AddResident(Resident resident)
+        public async Task AddResident(int idApartment,Resident resident)
         {
-            throw new NotImplementedException();
+            Apartment apartment = await dbSet.FindAsync(idApartment);
+            if(apartment == null)
+            {
+                throw new NullReferenceException();
+            }
+            if(apartment.ResidentList == null) { apartment.ResidentList = new List<Resident>(); }
+            apartment.ResidentList.Add(resident);
         }
     }
 }

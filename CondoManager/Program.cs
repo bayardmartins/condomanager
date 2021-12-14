@@ -15,7 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<DataContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddTransient<IUnitOfWork,UnitOfWork>();
-builder.Services.AddTransient<IApartamentRepository,ApartmentRepository>();
+builder.Services.AddTransient<IApartmentRepository,ApartmentRepository>();
 builder.Services.AddTransient<ICondoBlockRepository,CondoBlockRepository>();
 builder.Services.AddTransient<ICondoRespository,CondoRepository>();
 builder.Services.AddTransient<IResidentRepository,ResidentRepository>();
