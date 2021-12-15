@@ -1,5 +1,3 @@
-using CondoManager.Models;
-
 namespace CondoManager.Repositories
 {
     public class ResidentRepository : BaseRepository<Resident>, IResidentRepository
@@ -19,7 +17,12 @@ namespace CondoManager.Repositories
             residentToUpdate.Phone = resident.Phone;
             residentToUpdate.Cpf = resident.Cpf;
             residentToUpdate.Email = resident.Email;
-            residentToUpdate.ApartamentId = resident.ApartamentId;
+            residentToUpdate.ApartmentId = resident.ApartmentId;
+        }
+
+        public IEnumerable<Resident> GetByApartmentId(int idApartment)
+        {
+            return dbSet.Where(resident => resident.ApartmentId == idApartment);
         }
     }
 }

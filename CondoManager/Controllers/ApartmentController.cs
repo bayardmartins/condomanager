@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using CondoManager.Models;
-using CondoManager.Models.DTO;
 
 namespace CondoManager.Controllers
 {
@@ -147,6 +145,15 @@ namespace CondoManager.Controllers
                 return NotFound();
             }
             return NoContent();
+        }
+
+        //GET: v1/api/Apartment/GetByBlock/1
+        [HttpGet("GetByBlock/{id}")]
+        public async Task<IEnumerable<Apartment>> GetApartmentsByBlockId(
+            [FromServices]IApartmentRepository apartmentRepository,
+            int id)
+        {
+            return apartmentRepository.GetByBlockId(id);
         }
     }
 }

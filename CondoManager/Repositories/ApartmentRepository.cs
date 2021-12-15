@@ -1,5 +1,3 @@
-using CondoManager.Models;
-
 namespace CondoManager.Repositories
 {
     public class ApartmentRepository : BaseRepository<Apartment>, IApartmentRepository
@@ -43,6 +41,11 @@ namespace CondoManager.Repositories
             }
             if(apartment.ResidentList == null) { apartment.ResidentList = new List<Resident>(); }
             apartment.ResidentList.Add(resident);
+        }
+
+        public IEnumerable<Apartment> GetByBlockId(int blockId)
+        {
+            return dbSet.Where(apartment =>  apartment.CondoBlockId == blockId);
         }
     }
 }

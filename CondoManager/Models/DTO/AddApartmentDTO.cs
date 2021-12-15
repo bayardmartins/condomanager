@@ -1,8 +1,8 @@
 namespace CondoManager.Models
 {
-    public class AddResidentDTO
+    public class AddApartmentDTO
     {
-        public int IdResident { get; set; }
+        public int IdCondoBlock { get; set; }
         public int IdApartment { get; set; }
     }
 }

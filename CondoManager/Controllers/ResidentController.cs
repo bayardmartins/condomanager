@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using CondoManager.Models;
 
 namespace CondoManager.Controllers
 {
@@ -100,6 +99,16 @@ namespace CondoManager.Controllers
                 return NotFound();
             }
             return NoContent();
+        }
+
+        //GET: v1/api/Resident/GetByApartment/1
+        [HttpGet("GetByApartment/{id}")]
+        public async Task<IEnumerable<Resident>> GetResidentByApartment(
+            [FromServices]IResidentRepository residentRepository,
+            int id)
+        {
+            var residents = residentRepository.GetByApartmentId(id);
+            return residents;
         }
 
 

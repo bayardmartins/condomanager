@@ -1,8 +1,6 @@
-using CondoManager.Models;
-
 namespace CondoManager.Repositories
 {
-    public class CondoRepository : BaseRepository<Condo>, ICondoRespository
+    public class CondoRepository : BaseRepository<Condo>, ICondoRepository
     {
         public CondoRepository(DataContext dataContext) : base(dataContext) {}
 
@@ -19,14 +17,25 @@ namespace CondoManager.Repositories
             condoToUpdate.ManagerEmail = condo.ManagerEmail;
         }
 
-        public async Task RemoveBlock(int Id)
+        public async Task AddBlock(int idCondo, CondoBlock condoBlock)
         {
-            throw new NotImplementedException();
+            Condo condo = await dbSet.FindAsync(idCondo);
+            if(condo == null)
+            {
+                throw new NullReferenceException();
+            }
+            if(condo.BlockList == null) { condo.BlockList = new List<CondoBlock>(); }
+            condo.BlockList.Add(condoBlock);
         }
 
-        public async Task AddBlock(Apartment apartment)
+        public async Task RemoveBlock(int idCondo, CondoBlock condoBlock)
         {
-            throw new NotImplementedException();
+            Condo condo = await dbSet.FindAsync(idCondo);
+            if(condo == null)
+            {
+                throw new NullReferenceException();
+            }
+            condo.BlockList.Remove(condoBlock);
         }
     }
 }

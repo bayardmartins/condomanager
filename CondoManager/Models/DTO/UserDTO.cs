@@ -1,4 +1,4 @@
-namespace CondoManager.Models.DTO
+namespace CondoManager.Models
 {
     public class UserDTO
     {

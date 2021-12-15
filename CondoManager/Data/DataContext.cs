@@ -1,6 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using CondoManager.Models;
-
 namespace CondoManager.Data
 {
     public class DataContext : DbContext, IDataContext
