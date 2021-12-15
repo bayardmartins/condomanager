@@ -1,5 +1,3 @@
-using CondoManager.Models;
-
 namespace CondoManager.Repositories
 {
     public class CondoBlockRepository : BaseRepository<CondoBlock>, ICondoBlockRepository
@@ -18,14 +16,30 @@ namespace CondoManager.Repositories
             condoBlockToUpdate.CondoId = condoBlock.CondoId;
         }
 
-        public async Task RemoveApartament(int Id)
+        public async Task RemoveApartment(int idCondoBlock, Apartment apartment)
         {
-            throw new NotImplementedException();
+            CondoBlock condoBlock = await dbSet.FindAsync(idCondoBlock);
+            if(condoBlock == null)
+            {
+                throw new NullReferenceException();
+            }
+            condoBlock.ApartamentList.Remove(apartment);
         }
 
-        public async Task AddApartament(Apartment apartment)
+        public async Task AddApartment(int idCondoBlock, Apartment apartment)
         {
-            throw new NotImplementedException();
+            CondoBlock condoBlock = await dbSet.FindAsync(idCondoBlock);
+            if(condoBlock == null)
+            {
+                throw new NullReferenceException();
+            }
+            if(condoBlock.ApartamentList == null) { condoBlock.ApartamentList = new List<Apartment>(); }
+            condoBlock.ApartamentList.Add(apartment);
+        }
+
+        public IEnumerable<CondoBlock> GetByCondoId(int condoId)
+        {
+            return dbSet.Where(block => block.CondoId == condoId);
         }
     }
 }

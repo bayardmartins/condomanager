@@ -1,5 +1,3 @@
-using CondoManager.Models;
-
 namespace CondoManager.Data
 {
     public interface IDataContext

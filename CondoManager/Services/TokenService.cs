@@ -1,8 +1,6 @@
-using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using CondoManager.Models;
 using Microsoft.IdentityModel.Tokens;
 
 namespace CondoManager.Services

@@ -7,7 +7,7 @@ namespace CondoManager.Models
         public string Phone { get; set; }
         public string Cpf { get; set; }
         public string Email { get; set; }
-        public int? ApartamentId { get; set; } = null;
+        public int? ApartmentId { get; set; } = null;
         public virtual Apartment? Apartments { get; set; } = null;
     }
 }

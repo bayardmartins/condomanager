@@ -7,5 +7,7 @@ namespace CondoManager.Repositories
         Task Update(Apartment condo);
         Task RemoveResident(int idApartment, Resident resident);
         Task AddResident(int idApartment,Resident resident);
+        IEnumerable<Apartment> GetByBlockId(int blockId);
+        
     }
 }

@@ -1,6 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using CondoManager.Models;
-using CondoManager.Models.DTO;
 using CondoManager.Services;
 
 namespace CondoManager.Controllers

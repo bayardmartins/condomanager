@@ -1,5 +1,3 @@
-using CondoManager.Models;
-
 namespace CondoManager.Repositories
 {
     public interface IBaseRepository<T> where T : Entity

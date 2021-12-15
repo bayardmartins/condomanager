@@ -1,6 +1,3 @@
-using CondoManager.Data;
-using CondoManager.Models;
-
 namespace CondoManager.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : Entity
