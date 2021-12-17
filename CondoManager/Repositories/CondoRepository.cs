@@ -17,25 +17,25 @@ namespace CondoManager.Repositories
             condoToUpdate.ManagerEmail = condo.ManagerEmail;
         }
 
-        public async Task AddBlock(int idCondo, CondoBlock condoBlock)
+        public async Task AddBlock(int idCondo, Block block)
         {
             Condo condo = await dbSet.FindAsync(idCondo);
             if(condo == null)
             {
                 throw new NullReferenceException();
             }
-            if(condo.BlockList == null) { condo.BlockList = new List<CondoBlock>(); }
-            condo.BlockList.Add(condoBlock);
+            if(condo.BlockList == null) { condo.BlockList = new List<Block>(); }
+            condo.BlockList.Add(block);
         }
 
-        public async Task RemoveBlock(int idCondo, CondoBlock condoBlock)
+        public async Task RemoveBlock(int idCondo, Block block)
         {
             Condo condo = await dbSet.FindAsync(idCondo);
             if(condo == null)
             {
                 throw new NullReferenceException();
             }
-            condo.BlockList.Remove(condoBlock);
+            condo.BlockList.Remove(block);
         }
     }
 }

@@ -2,7 +2,7 @@ namespace CondoManager.Models
 {
     public class AddBlockDTO
     {
-        public int IdCondoBlock { get; set; }
+        public int IdBlock { get; set; }
         public int IdCondo { get; set; }
     }
 }

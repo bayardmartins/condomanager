@@ -5,7 +5,7 @@ namespace CondoManager.Data
         public DataContext(DbContextOptions<DataContext> options): base(options) {}
 
         public DbSet<Condo> Condos { get; set; }
-        public DbSet<CondoBlock> CondoBlocks { get; set; }
+        public DbSet<Block> Blocks { get; set; }
         public DbSet<Apartment> Apartments { get; set; }
         public DbSet<Resident> Residents { get; set; }
         public DbSet<User> Users { get; set; }        

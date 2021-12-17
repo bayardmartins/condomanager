@@ -6,7 +6,7 @@ namespace CondoManager.Models
         public string Number { get; set; }
         public int Floor { get ; set; }
         public List<Resident>? ResidentList { get; set; } = null;
-        public int? CondoBlockId { get; set; }
-        public virtual CondoBlock? CondoBlock { get; set; } = null;
+        public int? BlockId { get; set; }
+        public virtual Block? Block { get; set; } = null;
     }
 }
