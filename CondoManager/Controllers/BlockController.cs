@@ -6,43 +6,43 @@ namespace CondoManager.Controllers
     [ApiController]
     [Route("v1/api/[controller]")]
     [Authorize]
-    public class CondoBlockController : ControllerBase
+    public class BlockController : ControllerBase
     {
-        //GET: v1/api/CondoBlock
+        //GET: v1/api/Block
         [HttpGet]
-        public async Task<IEnumerable<CondoBlock>> GetAllCondoBlocks(
-            [FromServices]ICondoBlockRepository condoBlockRepository)
+        public async Task<IEnumerable<Block>> GetAllBlocks(
+            [FromServices]IBlockRepository condoBlockRepository)
         {
             return await condoBlockRepository.GetAll();
         }
 
-        //GET: v1/api/CondoBlock/1
+        //GET: v1/api/Block/1
         [HttpGet("{id}")]
-        public async Task<ActionResult<CondoBlock>> GetCondoBlocksById(
-            [FromServices]ICondoBlockRepository condoBlockRepository,
+        public async Task<ActionResult<Block>> GetBlocksById(
+            [FromServices]IBlockRepository condoBlockRepository,
             int id)
         {
-            var condoBlock = await condoBlockRepository.Get(id);
-            if (condoBlock == null)
+            var block = await condoBlockRepository.Get(id);
+            if (block == null)
             {
                 return NotFound();
             }
-            return condoBlock;
+            return block;
         }
 
-        //POST: v1/api/CondoBlock
+        //POST: v1/api/Block
         [HttpPost()]
-        public async Task<ActionResult> CreateCondoBlock(
-            [FromServices]ICondoBlockRepository condoBlockRepository,
+        public async Task<ActionResult> CreateBlock(
+            [FromServices]IBlockRepository condoBlockRepository,
             [FromServices]IUnitOfWork uow,
-            CondoBlock condoBlock)
+            Block block)
         {
             try
             {
-                await condoBlockRepository.Add(condoBlock);
+                await condoBlockRepository.Add(block);
                 uow.Commit();
             } 
-            catch 
+            catch
             {
                 uow.RollBack();
                 return NotFound();
@@ -50,21 +50,21 @@ namespace CondoManager.Controllers
             return NoContent();
         }
 
-        //PUT: v1/api/CondoBlock/1
+        //PUT: v1/api/Block/1
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateCondoBlock(
-            [FromServices]ICondoBlockRepository condoBlockRepository,
+        public async Task<ActionResult> UpdateBlock(
+            [FromServices]IBlockRepository condoBlockRepository,
             [FromServices]IUnitOfWork uow,
-            int id, CondoBlock condoBlock)
+            int id, Block block)
         {
-            if (id != condoBlock.Id)
+            if (id != block.Id)
             {
                 return BadRequest();
             }
     
             try
             {
-                await condoBlockRepository.Update(condoBlock);
+                await condoBlockRepository.Update(block);
                 uow.Commit();
             } 
             catch 
@@ -75,10 +75,10 @@ namespace CondoManager.Controllers
             return NoContent();
         }
 
-        //DELETE: v1/api/CondoBlock/1
+        //DELETE: v1/api/Block/1
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteCondoBlock(
-            [FromServices]ICondoBlockRepository condoBlockRepository,
+        public async Task<ActionResult> DeleteBlock(
+            [FromServices]IBlockRepository condoBlockRepository,
             [FromServices]IUnitOfWork uow,
             int id)
         {
@@ -95,10 +95,10 @@ namespace CondoManager.Controllers
             return NoContent();
         }
 
-        //POST: v1/api/CondoBlock/001/AddApartment/
+        //POST: v1/api/Block/001/AddApartment/
         [HttpPost("AddApartment")]
         public async Task<ActionResult> AddApartment(
-            [FromServices]ICondoBlockRepository condoBlockRepository,
+            [FromServices]IBlockRepository condoBlockRepository,
             [FromServices]IApartmentRepository apartmentRepository,
             [FromServices]IUnitOfWork uow,
             [FromBody]AddApartmentDTO fromBody)
@@ -110,7 +110,7 @@ namespace CondoManager.Controllers
             }
             try
             {
-                await condoBlockRepository.AddApartment(fromBody.IdCondoBlock,apartment);
+                await condoBlockRepository.AddApartment(fromBody.IdBlock,apartment);
                 uow.Commit();
             } 
             catch 
@@ -121,10 +121,10 @@ namespace CondoManager.Controllers
             return NoContent();
         }
 
-        //POST: v1/api/CondoBlock/001/RemoveApartment/
+        //POST: v1/api/Block/001/RemoveApartment/
         [HttpPost("RemoveApartment")]
         public async Task<ActionResult> RemoveApartment(
-            [FromServices]ICondoBlockRepository condoBlockRepository,
+            [FromServices]IBlockRepository condoBlockRepository,
             [FromServices]IApartmentRepository apartmentRepository,
             [FromServices]IUnitOfWork uow,
             [FromBody]AddApartmentDTO fromBody)
@@ -136,7 +136,7 @@ namespace CondoManager.Controllers
             }
             try
             {
-                await condoBlockRepository.RemoveApartment(fromBody.IdCondoBlock,apartment);
+                await condoBlockRepository.RemoveApartment(fromBody.IdBlock,apartment);
                 uow.Commit();
             } 
             catch 
@@ -147,10 +147,10 @@ namespace CondoManager.Controllers
             return NoContent();
         }
 
-        //GET: v1/api/CondoBlock/GetByBlock/1
-        [HttpGet("GetByBlock/{id}")]
-        public async Task<IEnumerable<CondoBlock>> GetCondoBlockByCondoId(
-            [FromServices]ICondoBlockRepository condoBlockRepository,
+        //GET: v1/api/Block/GetByCondo/1
+        [HttpGet("GetByCondo/{id}")]
+        public async Task<IEnumerable<Block>> GetBlockByCondoId(
+            [FromServices]IBlockRepository condoBlockRepository,
             int id)
         {
             return condoBlockRepository.GetByCondoId(id);

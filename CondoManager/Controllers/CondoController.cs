@@ -96,22 +96,22 @@ namespace CondoManager.Controllers
             return NoContent();
         }
 
-        //POST: v1/api/Condo/001/AddCondoBlock/
-        [HttpPost("AddCondoBlock")]
-        public async Task<ActionResult> AddCondoBlock(
+        //POST: v1/api/Condo/001/AddBlock/
+        [HttpPost("AddBlock")]
+        public async Task<ActionResult> AddBlock(
             [FromServices]ICondoRepository condoRepository,
-            [FromServices]ICondoBlockRepository condoBlockRepository,
+            [FromServices]IBlockRepository condoBlockRepository,
             [FromServices]IUnitOfWork uow,
             [FromBody]AddBlockDTO fromBody)
         {
-            CondoBlock CondoBlock = await condoBlockRepository.Get(fromBody.IdCondoBlock);
-            if(CondoBlock == null)
+            Block Block = await condoBlockRepository.Get(fromBody.IdBlock);
+            if(Block == null)
             {
                 return NotFound();
             }
             try
             {
-                await condoRepository.AddBlock(fromBody.IdCondo,CondoBlock);
+                await condoRepository.AddBlock(fromBody.IdCondo,Block);
                 uow.Commit();
             } 
             catch 
@@ -122,22 +122,22 @@ namespace CondoManager.Controllers
             return NoContent();
         }
 
-        //POST: v1/api/CondoBlock/001/RemoveCondoBlock/
-        [HttpPost("RemoveCondoBlock")]
-        public async Task<ActionResult> RemoveCondoBlock(
+        //POST: v1/api/Block/001/RemoveBlock/
+        [HttpPost("RemoveBlock")]
+        public async Task<ActionResult> RemoveBlock(
             [FromServices]ICondoRepository condoRepository,
-            [FromServices]ICondoBlockRepository condoBlockRepository,
+            [FromServices]IBlockRepository condoBlockRepository,
             [FromServices]IUnitOfWork uow,
             [FromBody]AddBlockDTO fromBody)
         {
-            CondoBlock CondoBlock = await condoBlockRepository.Get(fromBody.IdCondoBlock);
-            if(CondoBlock == null)
+            Block Block = await condoBlockRepository.Get(fromBody.IdBlock);
+            if(Block == null)
             {
                 return NotFound();
             }
             try
             {
-                await condoRepository.RemoveBlock(fromBody.IdCondoBlock,CondoBlock);
+                await condoRepository.RemoveBlock(fromBody.IdBlock,Block);
                 uow.Commit();
             } 
             catch 

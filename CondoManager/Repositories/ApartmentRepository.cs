@@ -19,7 +19,7 @@ namespace CondoManager.Repositories
 
             ApartmentToUpdate.Number = condo.Number;
             ApartmentToUpdate.Floor = condo.Floor;
-            ApartmentToUpdate.CondoBlockId = condo.CondoBlockId;
+            ApartmentToUpdate.BlockId = condo.BlockId;
         }
 
         public async Task RemoveResident(int idApartment, Resident resident)
@@ -45,7 +45,7 @@ namespace CondoManager.Repositories
 
         public IEnumerable<Apartment> GetByBlockId(int blockId)
         {
-            return dbSet.Where(apartment =>  apartment.CondoBlockId == blockId);
+            return dbSet.Where(apartment =>  apartment.BlockId == blockId);
         }
     }
 }
