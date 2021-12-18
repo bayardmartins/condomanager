@@ -25,7 +25,7 @@ namespace CondoManager.Controllers
             var block = await condoBlockRepository.Get(id);
             if (block == null)
             {
-                return NotFound();
+                return NotFound($"Bloco com id {id} não encontrado");
             }
             return block;
         }
@@ -45,9 +45,9 @@ namespace CondoManager.Controllers
             catch
             {
                 uow.RollBack();
-                return NotFound();
+                return UnprocessableEntity($"Erro ao adicionar bloco ${block.Id}");
             }
-            return NoContent();
+            return Ok($"Bloco {block.Id} criado!");
         }
 
         //PUT: v1/api/Block/1
@@ -59,7 +59,7 @@ namespace CondoManager.Controllers
         {
             if (id != block.Id)
             {
-                return BadRequest();
+                return NotFound($"Id {id} não é a mesma do Bloco {block.Name}");
             }
     
             try
@@ -70,9 +70,9 @@ namespace CondoManager.Controllers
             catch 
             {
                 uow.RollBack();
-                return NotFound();
+                return UnprocessableEntity($"Erro ao atualizar o Bloco {block.Id}");
             }
-            return NoContent();
+            return Ok($"Bloco {block.Id} atualizado!");
         }
 
         //DELETE: v1/api/Block/1
@@ -90,9 +90,9 @@ namespace CondoManager.Controllers
             catch
             {
                 uow.RollBack();
-                return NotFound();
+                return UnprocessableEntity($"Erro ao deletar o Bloco {id}");
             }
-            return NoContent();
+            return Ok($"Bloco {id} deletado!");
         }
 
         //POST: v1/api/Block/001/AddApartment/
@@ -106,7 +106,7 @@ namespace CondoManager.Controllers
             Apartment apartment = await apartmentRepository.Get(fromBody.IdApartment);
             if(apartment == null)
             {
-                return NotFound();
+                return NotFound($"Apartamento com id {fromBody.IdApartment} não encontrado");
             }
             try
             {
@@ -116,9 +116,9 @@ namespace CondoManager.Controllers
             catch 
             {
                 uow.RollBack();
-                return NotFound();
+                return UnprocessableEntity($"Erro ao adicionar o Apartamento {fromBody.IdApartment} ao Bloco {fromBody.IdBlock}");
             }
-            return NoContent();
+            return Ok($"Apartamento {fromBody.IdApartment} adicionado ao Bloco {fromBody.IdBlock}!");
         }
 
         //POST: v1/api/Block/001/RemoveApartment/
@@ -132,7 +132,7 @@ namespace CondoManager.Controllers
             Apartment apartment = await apartmentRepository.Get(fromBody.IdApartment);
             if(apartment == null)
             {
-                return NotFound();
+                return NotFound($"Apartamento com id {fromBody.IdApartment} não encontrado");
             }
             try
             {
@@ -142,9 +142,9 @@ namespace CondoManager.Controllers
             catch 
             {
                 uow.RollBack();
-                return NotFound();
+                return UnprocessableEntity($"Erro ao adicionar o Apartamento {fromBody.IdApartment} ao Bloco {fromBody.IdBlock}");
             }
-            return NoContent();
+            return Ok($"Apartamento {fromBody.IdApartment} adicionado ao Bloco {fromBody.IdBlock}!");
         }
 
         //GET: v1/api/Block/GetByCondo/1
