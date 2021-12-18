@@ -1,10 +1,9 @@
 using System.ComponentModel.DataAnnotations;
-using CondoManager.Utils;
 namespace CondoManager.Models
 {
     public class Block : Entity
     {
-        [Required(ErrorMessage = $"Nome {MessageUtil.IsRequired}")]
+        [Required(ErrorMessage = $"Nome é obrigatório")]
         [DataType(DataType.Text)]
         public string Name { get; set; }
         
