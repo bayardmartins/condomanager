@@ -1,20 +1,19 @@
 using System.ComponentModel.DataAnnotations;
-using CondoManager.Utils;
 
 namespace CondoManager.Models
 {
     public class Condo : Entity
     {
-        [Required(ErrorMessage = $"Nome {MessageUtil.IsRequired}")]
+        [Required(ErrorMessage = $"Nome é obrigatório")]
         [DataType(DataType.Text)]
         public string Name { get; set; }
         
-        [Required(ErrorMessage = $"Telefone {MessageUtil.IsRequired}")]
-        [RegularExpression("(\\(?\\d{2}\\)?\\s)?(\\d{4,5}\\-\\d{4})", ErrorMessage = $"Telefone {MessageUtil.IsRequired}, verifique documentação para padrão aceito")]
+        [Required(ErrorMessage = $"Telefone é obrigatório")]
+        [RegularExpression("(\\(?\\d{2}\\)?\\s)?(\\d{4,5}\\-\\d{4})", ErrorMessage = $"Telefone é obrigatório, verifique documentação para padrão aceito")]
         public string Phone { get; set; }
         
-        [Required(ErrorMessage = $"E-mail do Síndico {MessageUtil.IsRequired}")]
-        [EmailAddress(ErrorMessage = $"E-mail {MessageUtil.IsRequired}")]
+        [Required(ErrorMessage = $"E-mail do Síndico é obrigatório")]
+        [EmailAddress(ErrorMessage = $"E-mail é obrigatório")]
         public string ManagerEmail { get; set; }
         
         public virtual ICollection<Block>? BlockList { get;set; } = null;
