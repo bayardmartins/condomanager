@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using CondoManager.Business;
 
 namespace CondoManager.Controllers
 {
@@ -8,6 +9,12 @@ namespace CondoManager.Controllers
     [Authorize]
     public class ResidentController : ControllerBase
     {
+        ResidentBusiness business;
+        
+        protected ResidentController(){
+            business = new ResidentBusiness();
+        }
+
         //GET: v1/api/Resident
         [HttpGet]
         public async Task<IEnumerable<Resident>> GetAllResidents(
@@ -37,12 +44,13 @@ namespace CondoManager.Controllers
             [FromServices]IUnitOfWork uow,
             Resident resident)
         {
+            Resident newResident = business.CreateResident(resident);
             //Postgres exige utc explícito
-            resident.BirthDay = DateTime.SpecifyKind(resident.BirthDay,DateTimeKind.Utc);
+            newResident.BirthDay = DateTime.SpecifyKind(resident.BirthDay,DateTimeKind.Utc);
                 
             try
             {
-                await residentRepository.Add(resident);
+                await residentRepository.Add(newResident);
                 uow.Commit();
             } 
             catch 
@@ -64,13 +72,13 @@ namespace CondoManager.Controllers
             {
                 return BadRequest();
             }
-
+            Resident newResident = business.CreateResident(resident);
             //Postgres exige utc explícito
-            resident.BirthDay = DateTime.SpecifyKind(resident.BirthDay,DateTimeKind.Utc);
+            newResident.BirthDay = DateTime.SpecifyKind(newResident.BirthDay,DateTimeKind.Utc);
                 
             try
             {
-                await residentRepository.Update(resident);
+                await residentRepository.Update(newResident);
                 uow.Commit();
             } 
             catch 
