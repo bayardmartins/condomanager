@@ -10,9 +10,9 @@ Todos os endpoints, exceto na rota /User, precisam de autenticação Bearer Toke
 ## Modelos
 ### Condo
 Padrões de telefone aceitos pela api:
-(XX) XXXXX-XXXX
-(XX) XXXX-XXXX
-XX XXXXX-XXXX
-XX XXXX-XXXX
-XXXXX-XXXX
-XXXX-XXXX
+<br>(XX) XXXXX-XXXX
+<br>(XX) XXXX-XXXX
+<br>XX XXXXX-XXXX
+<br>XX XXXX-XXXX
+<br>XXXXX-XXXX
+<br>XXXX-XXXX
