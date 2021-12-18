@@ -13,14 +13,15 @@ namespace CondoManager.Controllers
             [FromServices]IUserRepository userRepository,
             UserDTO user)
         {
+            //Em um sistema de verdade a tela de login iria retornar Usuário ou Senha inválidos
             var userFound = await userRepository.GetUserByUserName(user.UserName);
             if (userFound == null)
             {
-                return NotFound();
+                return NotFound("Usuário não encontrado");
             }
             if (user.Password != userFound.Password)
             {
-                return BadRequest("Wrong Password");
+                return BadRequest("Senha inválida");
             }
 
             var token = TokenService.GenerateToken(userFound);
@@ -48,9 +49,9 @@ namespace CondoManager.Controllers
             catch (Exception err)
             {
                 uow.RollBack();
-                return BadRequest(err);
+                return BadRequest($"Erro ao registrar usuário.\n{err}");
             }
-            return NoContent();
+            return Ok($"Usuário registrado!");
         }
     }
 }

@@ -32,7 +32,7 @@ namespace CondoManager.Controllers
             var resident = await residentRepository.Get(id);
             if (resident == null)
             {
-                return NotFound();
+                return NotFound($"Residente com id {id} não encontrado");
             }
             return resident;
         }
@@ -56,9 +56,9 @@ namespace CondoManager.Controllers
             catch 
             {
                 uow.RollBack();
-                return NotFound();
+                return UnprocessableEntity($"Erro ao adicionar Residente ${resident.Id}");
             }
-            return NoContent();
+            return Ok($"Residente {resident.Id} criado!");
         }
 
         //PUT: v1/api/Resident/1
@@ -70,7 +70,7 @@ namespace CondoManager.Controllers
         {
             if (id != resident.Id)
             {
-                return BadRequest();
+                return NotFound($"Id {id} não é a mesma do Resident {resident.Name}");
             }
             Resident newResident = business.CreateResident(resident);
             //Postgres exige utc explícito
@@ -84,9 +84,9 @@ namespace CondoManager.Controllers
             catch 
             {
                 uow.RollBack();
-                return NotFound();
+                return UnprocessableEntity($"Erro ao atualizar o Residente {resident.Id}");
             }
-            return NoContent();
+            return Ok($"Residente {resident.Id} atualizado!");
         }
 
         //DELETE: v1/api/Resident/1
@@ -104,9 +104,9 @@ namespace CondoManager.Controllers
             catch
             {
                 uow.RollBack();
-                return NotFound();
+                return UnprocessableEntity($"Erro ao deletar o Residente {id}");
             }
-            return NoContent();
+            return Ok($"Residente {id} deletado!");
         }
 
         //GET: v1/api/Resident/GetByApartment/1
