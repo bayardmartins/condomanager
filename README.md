@@ -33,3 +33,16 @@ Padrões de telefone aceitos pela api:
 <br>
 <br>Agora é só utilizar o swagger ou uma ferramenta como Insomnia ou Postman para executar as requisições
 <br>Se as configurações iniciais forem mantidas o banco de dados pode ser acessado via http://localhost:5050/ (login e senha presentes no arquivo docker-compose.yml). Para acesso à api vide sessão Endpoints neste documento
+
+## Estrutura
+Dentro da estrutura do CondoManager, temos as pastas:
+
+    ├── Collection          # json com todos os endpoints da API para ser utilizado com Postman
+    CondoManager
+    │   ├── Business        # Camada de negócio
+    |   └── Controllers     # Camada de Controladores utilizando AspNetCore.Mvc do .NET 6
+    |   └── Data            # Camada de acesso ao dados, utilizando EntityFramework
+    |   └── Migrations      # Onde são aplicadas as migrações criadas pelo EntityFramework
+    |   └── Models          # Camada de Modelos
+    |   └── Repositories    # Camada intermediária entre Dados e Controladores
+    |   └── Service         # Camada de serviços utilizado por diversas camadas

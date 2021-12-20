@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using CondoManager.Business;
+using CondoManager.Services;
 
 namespace CondoManager.Controllers
 {
@@ -9,10 +9,10 @@ namespace CondoManager.Controllers
     [Authorize]
     public class ResidentController : ControllerBase
     {
-        ResidentBusiness business;
-        
-        protected ResidentController(){
-            business = new ResidentBusiness();
+        ResidentService residenceService;
+
+        public ResidentController() : base() {
+            residenceService = new ResidentService();
         }
 
         //GET: v1/api/Resident
@@ -44,7 +44,7 @@ namespace CondoManager.Controllers
             [FromServices]IUnitOfWork uow,
             Resident resident)
         {
-            Resident newResident = business.CreateResident(resident);
+            Resident newResident = residenceService.CreateResident(resident);
             //Postgres exige utc explícito
             newResident.BirthDay = DateTime.SpecifyKind(resident.BirthDay,DateTimeKind.Utc);
                 
@@ -72,7 +72,7 @@ namespace CondoManager.Controllers
             {
                 return NotFound($"Id {id} não é a mesma do Resident {resident.Name}");
             }
-            Resident newResident = business.CreateResident(resident);
+            Resident newResident = residenceService.CreateResident(resident);
             //Postgres exige utc explícito
             newResident.BirthDay = DateTime.SpecifyKind(newResident.BirthDay,DateTimeKind.Utc);
                 
