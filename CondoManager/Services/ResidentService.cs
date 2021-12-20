@@ -1,6 +1,6 @@
-namespace CondoManager.Business
+namespace CondoManager.Services
 {
-    public class ResidentBusiness
+    public class ResidentService // : IResidentService
     {
         private char[] phoneFilter = {' ','-','(',')'};
         private char[] cpfFilter = {'.',',','-',' '};

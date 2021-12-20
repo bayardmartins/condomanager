@@ -20,6 +20,7 @@ builder.Services.AddTransient<IBlockRepository,BlockRepository>();
 builder.Services.AddTransient<ICondoRepository,CondoRepository>();
 builder.Services.AddTransient<IResidentRepository,ResidentRepository>();
 builder.Services.AddTransient<IUserRepository,UserRepository>();
+builder.Services.AddTransient<ResidentService>();
 
 var root = Directory.GetCurrentDirectory();
 var dotenv = Path.Combine(root, ".env");

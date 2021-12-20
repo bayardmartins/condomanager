@@ -1,0 +1,1301 @@
+{
+	"info": {
+		"_postman_id": "546dfb85-ba45-42e7-be1f-982c68d1a74b",
+		"name": "condo-dev",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Resident",
+			"item": [
+				{
+					"name": "GetAllResident",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk2NTAwNzUsImV4cCI6MTYzOTY1NzI3NSwiaWF0IjoxNjM5NjUwMDc1fQ.1x0_iu95J0aAmSMdNsBE_Sd0--9QJiEYH_rr4mCJ5ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Resident",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Resident"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetResidentByApartment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk2NTAwNzUsImV4cCI6MTYzOTY1NzI3NSwiaWF0IjoxNjM5NjUwMDc1fQ.1x0_iu95J0aAmSMdNsBE_Sd0--9QJiEYH_rr4mCJ5ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Resident/GetByApartment/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Resident",
+								"GetByApartment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetResident",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk0NDU3MjgsImV4cCI6MTYzOTQ1MjkyOCwiaWF0IjoxNjM5NDQ1NzI4fQ.0An9n6Cm3R3Bkmx-Td4grsCFNAmyguMkBL4PsIdnai0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Resident/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Resident",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostResident",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk2NTAwNzUsImV4cCI6MTYzOTY1NzI3NSwiaWF0IjoxNjM5NjUwMDc1fQ.1x0_iu95J0aAmSMdNsBE_Sd0--9QJiEYH_rr4mCJ5ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"nome teste novo\",\n  \"birthDay\": \"2012-12-12\",\n  \"phone\": \"48990691234\",\n  \"cpf\": \"00544366213\",\n  \"email\": \"teste@email.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Resident",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Resident"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DelResident",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk0NDU3MjgsImV4cCI6MTYzOTQ1MjkyOCwiaWF0IjoxNjM5NDQ1NzI4fQ.0An9n6Cm3R3Bkmx-Td4grsCFNAmyguMkBL4PsIdnai0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Resident/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Resident",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutResident",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk0NDU3MjgsImV4cCI6MTYzOTQ1MjkyOCwiaWF0IjoxNjM5NDQ1NzI4fQ.0An9n6Cm3R3Bkmx-Td4grsCFNAmyguMkBL4PsIdnai0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"nome teste put\",\n  \"birthDay\": \"2012-12-01\",\n  \"phone\": \"48990691234\",\n  \"cpf\": \"00544366123\",\n  \"email\": \"teste@email.com\",\n  \"id\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Resident/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Resident",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Apartment",
+			"item": [
+				{
+					"name": "PutApartment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk0NDU3MjgsImV4cCI6MTYzOTQ1MjkyOCwiaWF0IjoxNjM5NDQ1NzI4fQ.0An9n6Cm3R3Bkmx-Td4grsCFNAmyguMkBL4PsIdnai0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"number\": \"001\",\n  \"floor\": 0,\n  \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Apartment/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Apartment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DelApartment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk0NzU3MTUsImV4cCI6MTYzOTQ4MjkxNSwiaWF0IjoxNjM5NDc1NzE1fQ.h8t3RPDHXJqY7Te5wMRiKA01YbpP26GgEnZZnSw2Pzc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Apartment/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Apartment",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetApartment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk0NDU3MjgsImV4cCI6MTYzOTQ1MjkyOCwiaWF0IjoxNjM5NDQ1NzI4fQ.0An9n6Cm3R3Bkmx-Td4grsCFNAmyguMkBL4PsIdnai0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Apartment/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Apartment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllApartment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk2NTAwNzUsImV4cCI6MTYzOTY1NzI3NSwiaWF0IjoxNjM5NjUwMDc1fQ.1x0_iu95J0aAmSMdNsBE_Sd0--9QJiEYH_rr4mCJ5ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Apartment",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Apartment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostApartment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk2NTAwNzUsImV4cCI6MTYzOTY1NzI3NSwiaWF0IjoxNjM5NjUwMDc1fQ.1x0_iu95J0aAmSMdNsBE_Sd0--9QJiEYH_rr4mCJ5ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"number\": \"103\",\n  \"floor\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Apartment",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Apartment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddResident",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk2NTAwNzUsImV4cCI6MTYzOTY1NzI3NSwiaWF0IjoxNjM5NjUwMDc1fQ.1x0_iu95J0aAmSMdNsBE_Sd0--9QJiEYH_rr4mCJ5ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"IdResident\": \"1\",\n    \"IdApartment\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Apartment/AddResident/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Apartment",
+								"AddResident",
+								""
+							],
+							"query": [
+								{
+									"key": "idApartment",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveResident",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idApartment\": \"001\",\n    \"idResident\" 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Apartment/RemoveResident/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Apartment",
+								"RemoveResident",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByBlock",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk2NTAwNzUsImV4cCI6MTYzOTY1NzI3NSwiaWF0IjoxNjM5NjUwMDc1fQ.1x0_iu95J0aAmSMdNsBE_Sd0--9QJiEYH_rr4mCJ5ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Apartment/GetByBlock/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Apartment",
+								"GetByBlock",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Block",
+			"item": [
+				{
+					"name": "PutBlock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk0NDU3MjgsImV4cCI6MTYzOTQ1MjkyOCwiaWF0IjoxNjM5NDQ1NzI4fQ.0An9n6Cm3R3Bkmx-Td4grsCFNAmyguMkBL4PsIdnai0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"number\": \"001\",\n  \"floor\": 0,\n  \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Block/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Block",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DelBlock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk0NzU3MTUsImV4cCI6MTYzOTQ4MjkxNSwiaWF0IjoxNjM5NDc1NzE1fQ.h8t3RPDHXJqY7Te5wMRiKA01YbpP26GgEnZZnSw2Pzc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Block/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Block",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBlock",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk0NDU3MjgsImV4cCI6MTYzOTQ1MjkyOCwiaWF0IjoxNjM5NDQ1NzI4fQ.0An9n6Cm3R3Bkmx-Td4grsCFNAmyguMkBL4PsIdnai0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Block/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Block",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllBlock",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk2NTAwNzUsImV4cCI6MTYzOTY1NzI3NSwiaWF0IjoxNjM5NjUwMDc1fQ.1x0_iu95J0aAmSMdNsBE_Sd0--9QJiEYH_rr4mCJ5ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Block",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Block"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostBlock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk2NTAwNzUsImV4cCI6MTYzOTY1NzI3NSwiaWF0IjoxNjM5NjUwMDc1fQ.1x0_iu95J0aAmSMdNsBE_Sd0--9QJiEYH_rr4mCJ5ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Name\": \"A1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Block",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Block"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddApartment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk2NTAwNzUsImV4cCI6MTYzOTY1NzI3NSwiaWF0IjoxNjM5NjUwMDc1fQ.1x0_iu95J0aAmSMdNsBE_Sd0--9QJiEYH_rr4mCJ5ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"IdBlock\": \"4\",\n    \"IdApartment\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Block/AddApartment/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Block",
+								"AddApartment",
+								""
+							],
+							"query": [
+								{
+									"key": "idApartment",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveApartment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idApartment\": \"001\",\n    \"idResident\" 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Block/RemoveApartment/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Block",
+								"RemoveApartment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByCondo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk2NTAwNzUsImV4cCI6MTYzOTY1NzI3NSwiaWF0IjoxNjM5NjUwMDc1fQ.1x0_iu95J0aAmSMdNsBE_Sd0--9QJiEYH_rr4mCJ5ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Block/GetByCondo/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Block",
+								"GetByCondo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Condo",
+			"item": [
+				{
+					"name": "PutCondo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk0NDU3MjgsImV4cCI6MTYzOTQ1MjkyOCwiaWF0IjoxNjM5NDQ1NzI4fQ.0An9n6Cm3R3Bkmx-Td4grsCFNAmyguMkBL4PsIdnai0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"number\": \"001\",\n  \"floor\": 0,\n  \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Condo/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Condo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DelCondo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk0NzU3MTUsImV4cCI6MTYzOTQ4MjkxNSwiaWF0IjoxNjM5NDc1NzE1fQ.h8t3RPDHXJqY7Te5wMRiKA01YbpP26GgEnZZnSw2Pzc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Condo/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Condo",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCondo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk0NDU3MjgsImV4cCI6MTYzOTQ1MjkyOCwiaWF0IjoxNjM5NDQ1NzI4fQ.0An9n6Cm3R3Bkmx-Td4grsCFNAmyguMkBL4PsIdnai0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Condo/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Condo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllCondo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk3Mzc2MDUsImV4cCI6MTYzOTc0NDgwNSwiaWF0IjoxNjM5NzM3NjA1fQ.GvwG2YcwCxPlCDG0BcaGm5wCMh_V0z_qcJUXJOczeb8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Condo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Condo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostCondo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk3Mzc2MDUsImV4cCI6MTYzOTc0NDgwNSwiaWF0IjoxNjM5NzM3NjA1fQ.GvwG2YcwCxPlCDG0BcaGm5wCMh_V0z_qcJUXJOczeb8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Condo Teste 2\",\n  \"phone\": \"3248-0022\",\n  \"manageremail\": \"teste\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Condo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Condo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddBlock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJuYmYiOjE2Mzk2NTAwNzUsImV4cCI6MTYzOTY1NzI3NSwiaWF0IjoxNjM5NjUwMDc1fQ.1x0_iu95J0aAmSMdNsBE_Sd0--9QJiEYH_rr4mCJ5ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"IdCondo\": \"1\",\n    \"IdBlock\": \"4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Condo/AddBlock/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Condo",
+								"AddBlock",
+								""
+							],
+							"query": [
+								{
+									"key": "idApartment",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveBlock",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idApartment\": \"001\",\n    \"idResident\" 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/Condo/RemoveBlock/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"Condo",
+								"RemoveBlock",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"UserName\" : \"admin\",\n    \"Password\" : \"admin\",\n    \"Role\" : \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/User/register",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"User",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"UserName\" : \"admin\",\n    \"Password\" : \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7287/v1/api/User/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7287",
+							"path": [
+								"v1",
+								"api",
+								"User",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
